@@ -20,27 +20,14 @@ My pipline consisted of 6 steps.
 * 5. Hough transform applied to detect lines on the image
 * 6. Draw lines on the image
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
-
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
-
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
-![alt text][image1]
-
-
 ### 2. Identify potential shortcomings with your current pipeline
 
+One potential shortcoming would be the lane detection algorithm only works find on the straight lines not on the challange video. When the line is in a curve, the line looks like a mess.
 
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
-
+Second shortcoming is the interested region currently is change by hand which means all the vertices are hyperparameters.
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+A possible improvement would be to using concpet of differential. Separate all the lines in several small pieces (boxes) and find and draw lines in each small box and combine all the small box together to build a line.
 
-Another potential improvement could be to ...
+Another potential improvement for shortcoming 2 could be to using neural networks to identify the interested regions in the future.
