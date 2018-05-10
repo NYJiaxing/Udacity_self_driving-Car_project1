@@ -20,6 +20,10 @@ My pipline consisted of 6 steps.
 * 5. Hough transform applied to detect lines on the image
 * 6. Draw lines on the image
 
+One of the hard part of this project is to draw continue line on the identified hough lines. The resolution is calculate the slope of each line, if the slope is minus than zero then the line is identified on the left line, if the slope is greater than zero then the line is identified on the right line. Build a list to store slope of each line in each iteration.
+
+Then using the function of a line y = kx + b to calculate the start point (x1', y1') and start point (x2', y2') of each line. Then use the opencv function to draw the line on the image.
+
 ### 2. Identify potential shortcomings with your current pipeline
 
 One potential shortcoming would be the lane detection algorithm only works find on the straight lines not on the challange video. When the line is in a curve, the line looks like a mess.
